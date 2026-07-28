@@ -1,0 +1,236 @@
+/* ==========================================================================
+   1. Global Settings & Structural Resets
+   ========================================================================== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Background Setup */
+.homeBg {
+    background-image: url('bgImage.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.homeBg::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+    z-index: -1;
+}
+
+header {
+    background-color: rgb(118, 64, 43);
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    height: 70px;
+}
+
+.logo span {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.1;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+.right-section p {
+    color: rgb(80, 45, 1);
+    text-align: center;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    border-bottom: 2px solid white;
+}
+
+.btn {
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-left: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid;
+    color: #c8a96e;
+    transition: all 0.25s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(to bottom, #c8a27a, #4b2e1e);
+    color: white;
+    border: none;
+}
+
+/* ==========================================================================
+   2. Title / Below Header Section
+   ========================================================================== */
+.bHeader {
+    background: linear-gradient(rgba(75,46,30,0.75), rgba(75,46,30,0.75));
+    color: white;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 45px 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.bHeader p {
+    color: #e6cba8;
+    font-size: 14px;
+    letter-spacing: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 6px;
+}
+
+.bHeader h2 {
+    margin: 0;
+    color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 34px;
+    letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   3. Venue Cards
+   ========================================================================== */
+.venue-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 60px 40px;
+    flex-wrap: wrap;
+}
+
+.form-card.vertical {
+    background: #fdfcfb;
+    width: 300px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-card.vertical:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+}
+
+.card-img-wrap {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+}
+
+.card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.form-card.vertical:hover .card-img-wrap img {
+    transform: scale(1.08);
+}
+
+.card-body {
+    padding: 22px 20px 26px;
+    text-align: center;
+}
+
+.form-card h2 {
+    font-family: "Times New Roman", serif;
+    font-size: 22px;
+    margin: 0 0 8px;
+    color: #4b2e1e;
+    letter-spacing: 1px;
+}
+
+.tagline {
+    color: #c8a96e;
+    font-size: 13px;
+    font-style: italic;
+    margin: 0 0 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.info-line {
+    color: #6b4a2f;
+    font-size: 14px;
+    margin: 4px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==========================================================================
+   4. Responsive
+   ========================================================================== */
+@media screen and (max-width: 1056px) {
+
+    .right-section {
+        background-color: rgb(118, 64, 43) !important;
+        z-index: 99999 !important;
+    }
+
+    .bHeader {
+        padding: 30px 15px;
+    }
+
+    .bHeader h2 {
+        font-size: 26px;
+    }
+
+    .venue-container {
+        gap: 25px;
+        padding: 40px 20px;
+    }
+
+    .form-card.vertical {
+        width: 90%;
+        max-width: 340px;
+    }
+}
