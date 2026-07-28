@@ -21,3 +21,10 @@ The Catering Management System is a web application designed to simplify the cat
 - Customer Information Management
 - Admin Dashboard
 - Database Record Management
+
+## How to Run
+1. Move the project folder into XAMPP 'htdocs' directory
+2. run Apache and MySQL in XAMPP
+3. import the database file into phpMyAdmin
+4. Update database connection in db_connect.php (make sure the name of the database in the php file are the same with the one in phpMyAdmin)
+5. Open the project in your browser: http://localhost/264PROJECTS_FINALIZE (you can change the name of the directory. here Im using 264PROJECTS_FINALIZE)
